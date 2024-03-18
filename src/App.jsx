@@ -1,26 +1,41 @@
 
 import './App.css';
+import React from 'react';
+import Loginform from './Components/Loginform';
+
+// import Form from './Components/Form';
+
+import {BrowserRouter, Route,Routes} from "react-router-dom"
+import Navbar from './Components/Navbar';
+//  import City from './Components/City';
 
 function App() {
   return (
-    <div className="App">
-      hi
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-    </div>
+    <>
+    {/* <City/> */}
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+        {/* <Route path="/" element = {<StateEx />} /> */}
+        <Route path="/loginform" element = {<Loginform />} />
+        
+       
+        
+    </Routes>
+    </BrowserRouter>
+
+
+    
+    <Form/>
+
+      <Loginform/>
+      <br /> <br />
+ 
+       
+
+    </>
   );
 }
 
 export default App;
+
