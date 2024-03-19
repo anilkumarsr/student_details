@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
     <>
-        <ul>
+
+      <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div className="container-fluid">
+         <ul>
 
             <li><Link to="/home">HOME</Link></li>
             <li><Link to="/enquiryform">ENQUIRY FORM</Link></li>
@@ -15,7 +18,10 @@ const Navbar = () => {
             <li><Link to="/joined">JOINED</Link></li>
             <li><Link to="/notjoined">NOT JOINED</Link></li>
             <li><Link to="/logout">LOG OUT</Link></li>
-        </ul>
+         </ul>
+
+        </div>
+      </nav>
     </>
 
   )
