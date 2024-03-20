@@ -18,6 +18,7 @@ function App() {
     {/* <City/> */}
     <BrowserRouter>
     <Navbar/>
+    <Home/>
     <Routes>
         {/* <Route path="/" element = {<StateEx />} /> */}
         <Route path="/loginform" element = {<Loginform />} />
@@ -29,12 +30,11 @@ function App() {
 
 
     
-    <Form/>
-    <br /> <br />
+   
 
       <Loginform/>
       <br /> <br />
-      <Home/>
+     
        
 
     </>
