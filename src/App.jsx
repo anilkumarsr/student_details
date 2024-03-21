@@ -8,8 +8,11 @@ import Loginform from './Components/Loginform';
 
 import {BrowserRouter, Route,Routes} from "react-router-dom"
 import Navbar from './Components/Navbar';
-import Form from './Components/Form';
 import Home from './Components/Home';
+import AddUser from './Components/Users/AddUser';
+import Studentdetails from './Components/Studentdetails';
+import EditUser from './Components/Users/EditUser';
+import ViewUser from './Components/Users/ViewUser';
 //  import City from './Components/City';
 
 function App() {
@@ -18,13 +21,17 @@ function App() {
     {/* <City/> */}
     <BrowserRouter>
     <Navbar/>
-    <Home/>
+    {/* <Home/> */}
     <Routes>
         {/* <Route path="/" element = {<StateEx />} /> */}
-        <Route path="/loginform" element = {<Loginform />} />
-        
-       
-        
+        <Route exact path="/home" element={<Home/>}/>
+        <Route exact path="/loginform" element={<Loginform/>}/>
+        <Route exact path="/studentdetails" element={<Studentdetails/>}/>
+
+        <Route exact path="/adduser" element={<AddUser/>}/>
+        <Route exact path="/edituser/:id" element={<EditUser/>}/>
+        <Route exact path="/viewuser/:id" element={<ViewUser/>}/>
+
     </Routes>
     </BrowserRouter>
 
@@ -32,7 +39,7 @@ function App() {
     
    
 
-      <Loginform/>
+      
       <br /> <br />
      
        

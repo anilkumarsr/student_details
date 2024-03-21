@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 const Home = () => {
   const [users,setUsers]=useState([]);
 
-  const { id } = useParams();
+  // const { id } = useParams();
 
   useEffect(() => {
     loadUsers();
@@ -15,6 +15,11 @@ const Home = () => {
   const loadUsers = async () => {
     const result = await axios.get("http://localhost:8080/api/students");
     setUsers(result.data);
+  };
+
+  const deleteUser = async (id) => {
+    await axios.delete(`http://localhost:8080/api/students/${id}`);
+    loadUsers();
   };
 
   return (
@@ -29,7 +34,7 @@ const Home = () => {
       <th scope="col">Course</th>
       <th scope="col">Gmail</th>
       <th scope="col">Name</th>
-      <th scope="col">PhoneNo</th>
+      {/* <th scope="col">PhoneNo</th> */}
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -44,7 +49,7 @@ const Home = () => {
                 <td>{user.course}</td>
                 <td>{user.gmail}</td>
                 <td>{user.name}</td>
-                <td>{user.phonenumber}</td>
+                {/* <td>{user.phonenumber}</td> */}
                 <td>{user.status}</td>
                 <td>
                   <Link
@@ -61,7 +66,7 @@ const Home = () => {
                   </Link>
                   <button
                     className="btn btn-danger mx-2"
-                    // onClick={() => deleteUser(user.id)}
+                     onClick={() => deleteUser(user.id)}
                   >
                     Delete
                   </button>
